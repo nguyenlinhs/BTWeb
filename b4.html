@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Form</title>
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    form {
+      width: 100%;
+      max-width: 800px;
+    }
+    .section-title {
+      font-weight: bold;
+      margin: 20px 0 10px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 4px;
+    }
+    .section-content {
+      margin-left: 20px;
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .form-row label {
+      width: 150px;
+      margin-right: 10px;
+      font-weight: normal;
+    }
+    .form-row input[type="text"],
+    .form-row input[type="email"],
+    .form-row input[type="datetime-local"],
+    .form-row select,
+    .form-row textarea {
+      flex: 1;
+      padding: 4px;
+    }
+    .gender-options, .shift-options {
+      display: flex;
+      flex-direction: column;
+      margin-left: 160px;
+    }
+    .captcha {
+      font-family: 'Courier New', monospace;
+      font-size: 24px;
+      background: #eee;
+      display: inline-block;
+      padding: 5px 15px;
+      margin: 5px 0;
+    }
+    .buttons {
+      text-align: right;
+      margin-top: 20px;
+    }
+    .buttons button {
+      padding: 8px 16px;
+      margin-left: 5px;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .btn-submit {
+      background-color: #28a745; /* Green */
+    }
+    .btn-cancel {
+      background-color: #dc3545; /* Red */
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+
+    <!-- Basic Info -->
+    <div class="section-title">Basic Info</div>
+    <div class="section-content">
+
+      <div class="form-row">
+        <label>Employee ID</label>
+        <input type="text" value="9" readonly>
+      </div>
+
+      <div class="form-row">
+        <label>Last Name</label>
+        <input type="text" value="Dodsworth">
+      </div>
+
+      <div class="form-row">
+        <label>First Name</label>
+        <input type="text" value="Anne">
+      </div>
+
+      <div class="form-row">
+        <label>Gender</label>
+      </div>
+      <div class="gender-options">
+        <label><input type="radio" name="gender"> Male</label>
+        <label><input type="radio" name="gender"> Female</label>
+        <label><input type="radio" name="gender"> XXX</label>
+        <label><input type="radio" name="gender" checked> ZZZ</label>
+      </div>
+
+      <div class="form-row">
+        <label>Title</label>
+        <input type="text" value="Sales Representative">
+      </div>
+
+      <div class="form-row">
+        <label>Suffix</label>
+        <input type="text" value="Ms.">
+      </div>
+
+      <div class="form-row">
+        <label>BirthDate</label>
+        <input type="datetime-local" value="1969-07-02T00:00">
+      </div>
+
+      <div class="form-row">
+        <label>HireDate</label>
+        <input type="datetime-local" value="1994-11-15T00:00">
+      </div>
+
+      <div class="form-row">
+        <label>SSN #</label>
+        <input type="text">
+      </div>
+
+      <div class="form-row">
+        <label>Reports To</label>
+        <select>
+          <option>Buchanan</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="section-title">Contact Info</div>
+    <div class="section-content">
+
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" value="name@example.com">
+      </div>
+
+      <div class="form-row">
+        <label>Address</label>
+        <input type="text" value="7 Houndstooth Rd.">
+      </div>
+
+      <div class="form-row">
+        <label>City</label>
+        <input type="text" value="London">
+      </div>
+
+      <div class="form-row">
+        <label>Region</label>
+        <input type="text">
+      </div>
+
+      <div class="form-row">
+        <label>Postal Code</label>
+        <input type="text" value="WG2 7LT">
+      </div>
+
+      <div class="form-row">
+        <label>Country</label>
+        <select>
+          <option>Russian Federation</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>US Home Phone</label>
+        <input type="text" value="(234)234-2342">
+      </div>
+
+      <div class="form-row">
+        <label>Photo</label>
+        <input type="text" value="EmpID9.bmp">
+      </div>
+    </div>
+
+    <!-- Optional Info -->
+    <div class="section-title">Optional Info</div>
+    <div class="section-content">
+
+      <div class="form-row">
+        <label>Notes</label>
+        <textarea id="notes">Anne has a BA degree in English from St. Lawrence College.
+She is fluent in French and German.ZZZ</textarea>
+      </div>
+
+      <div class="form-row">
+        <label>Preferred Shift</label>
+      </div>
+      <div class="shift-options">
+        <label><input type="checkbox" checked> Regular</label>
+        <label><input type="checkbox" checked> Gravy Yard</label>
+      </div>
+
+      <div class="form-row">
+        <label>Active?</label>
+        <input type="checkbox" checked>
+      </div>
+
+      <div class="form-row">
+        <label>Are you human?</label>
+        <div>
+          <div class="captcha">TIDAWO</div>
+          <button type="button">Click to change</button>
+          <input type="text">
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="buttons">
+      <button type="submit" class="btn-submit">Submit</button>
+      <button type="reset" class="btn-cancel">Cancel</button>
+    </div>
+
+  </form>
+
+  <script>
+    tinymce.init({
+      selector: 'textarea#notes',
+      menubar: false,
+      toolbar: 'bold italic underline | alignleft aligncenter alignright | bullist numlist | undo redo | cut copy paste | link image | fontsizeselect | removeformat',
+      height: 200
+    });
+  </script>
+
+</body>
+</html>
